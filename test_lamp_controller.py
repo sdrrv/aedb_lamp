@@ -1,23 +1,22 @@
 import unittest
-
-from controllers import LampController
-
+from controler import LampController
 class TestLampController(unittest.TestCase):
-    def test_turn_on(self):
-        controller = LampController()
-        controller.turn_on()
-        self.assertTrue(controller.is_on())
     
-    def test_turn_off(self):
-        controller = LampController()
-        controller.turn_off()
-        self.assertFalse(controller.is_on())
-    
-    def test_turn_off_after_turn_on(self):
-        controller = LampController()
-        controller.turn_on()
-        controller.turn_off()
-        self.assertFalse(controller.is_on())
+    def __init__(self,*args, **kwargs):
+        super(TestLampController, self).__init__(*args, **kwargs) #Não percebo esta linha de código... Mas parece funcionar
+        self.controller= LampController()
 
-if __name__ == "__main__":
+    def test_turn_on(self):
+        self.controller.turn_on()
+        self.assertTrue(self.controller.is_on())
+        
+    def test_turn_off_after_on(self):
+        self.controller.turn_on()
+        self.controller.turn_off()
+        self.assertFalse(self.controller.is_on())
+
+        
+
+if __name__ == '__main__':
     unittest.main()
+    
