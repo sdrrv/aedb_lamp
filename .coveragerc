@@ -1,3 +1,4 @@
 [run]
 omit =
+    /home/miguel/Documents/Faculdade/AED/Aulas_AED/lib/python3.6/site-packages/_virtualenv.py*
     test_*
