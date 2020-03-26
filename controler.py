@@ -2,7 +2,7 @@ from models import Lamp
 class LampController:
 
     def __init__(self):
-        self.lLamp= Lamp()
+        self.lamp= Lamp()
 
     def turn_on(self):
         self.lamp.set_on()
