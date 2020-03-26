@@ -22,3 +22,24 @@ class ColorLamp(Lamp):
 
     def get_color(self):
         return self.color
+
+class LampArray:
+    def __init__(self):
+        self.conjunto=[]
+    
+    def append_lamp(self,lamp):
+        self.conjunto.append(lamp)
+    
+    def turn_on(self):
+        for lamp in self.conjunto:
+            lamp.set_on()
+    
+    def turn_off(self):
+        for lamp in self.conjunto:
+            lamp.set_off()
+    
+    def get_conjunto_states(self):
+        result=[]
+        for lamp in self.conjunto:
+            result.append(lamp.get_state())
+        return result
