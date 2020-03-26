@@ -1,4 +1,5 @@
 from models import Lamp
+
 class LampController:
     def __init__(self):
         self.Lamp= Lamp()
