@@ -1,14 +1,14 @@
 from models import Lamp
-
 class LampController:
+
     def __init__(self):
-        self.Lamp= Lamp()
+        self.lLamp= Lamp()
 
     def turn_on(self):
-        self.Lamp.set_on()
+        self.lamp.set_on()
 
     def turn_off(self):
-        self.Lamp.set_off()
+        self.lamp.set_off()
 
     def is_on(self):
-        return self.Lamp.get_state()
+        return self.lamp.get_state()
