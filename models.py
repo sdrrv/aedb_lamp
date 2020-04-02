@@ -44,3 +44,13 @@ class LampArray:
         for lamp in self.conjunto:
             result.append(lamp.get_state())
         return result
+
+class all_lamps:
+    def __init__(self):
+        self.lamp_list={}
+    
+    def append(self,lamp,lamp_id):
+        self.lamp_list[lamp_id]=lamp
+    
+    def remove(self,lamp_id):
+        self.lamp_list.pop(lamp_id)

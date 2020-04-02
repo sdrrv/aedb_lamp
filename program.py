@@ -1,4 +1,4 @@
-from controllers import LampController
+from controler import LampController
 
 if __name__ == "__main__":
     controller = LampController()
@@ -13,6 +13,7 @@ if __name__ == "__main__":
         if commands[0] == "CL":
             # Create simple lamp with ID
             lamp_id = commands[1]
+
         elif commands[0] == "CCL":
             # Create color lamp with ID
             lamp_color = commands[1]
