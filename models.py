@@ -54,6 +54,9 @@ class all_lamps:
     
     def remove(self,lamp_id):
         self.lamp_list.pop(lamp_id)
+    
+    def get_lamp(self,lamp_id):
+        return self.lamp_list[lamp_id]
 
 class all_lamp_arrays:
     def __init__(self):
