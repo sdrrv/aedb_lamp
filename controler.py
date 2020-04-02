@@ -4,18 +4,9 @@ class LampController:
     def __init__(self):
         self.all_lamps = all_lamps()
         self.all_lamp_arrays = all_lamp_arrays()
-    def turn_on(self,lamp):
-        lamp.set_on()
-
-    def turn_off(self,lamp):
-        lamp.set_off()
-
-    def is_on(self,lamp):
-        return lamp.get_state()
     
     def create_simple_lamp(self,lamp_id):
         self.all_lamps.append(Lamp(lamp_id),lamp_id)
-        #Break
     
     def create_color_lamp(self,lamp_id,color):
         self.all_lamps.append(ColorLamp(lamp_id),lamp_id)
@@ -29,3 +20,12 @@ class LampController:
     
     def remove_lamp_from_array(self,array_id,lamp_id):
         self.all_lamp_arrays.lamp_arrays[array_id].remove_lamp(lamp_id)
+    
+    def get_lamp_state(self,lamp_id):
+        return self.all_lamps.get_lamp(lamp_id).get_state()
+
+    def set_lamp_on(self,lamp_id):
+        self.all_lamps.get_lamp(lamp_id).set_on()
+    
+    def set_lamp_off(self,lamp_id):
+        self.all_lamps.get_lamp(lamp_id).set_off()

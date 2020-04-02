@@ -36,11 +36,14 @@ if __name__ == "__main__":
         elif commands[0] == "S":
             # Get state of ID
             lamp_id = commands[1]
+            print(controller.get_lamp_state(lamp_id))
         elif commands[0] == "ON":
             # Set ID on
             lamp_id = commands[1]
+            controller.set_lamp_on(lamp_id)
         elif commands[0] == "OFF":
             # Set ID off
             lamp_id = commands[1]
+            controller.set_lamp_off(lamp_id)
         else:
-            print("Invalid command.") 
+            print("Invalid command.")
