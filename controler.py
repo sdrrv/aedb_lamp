@@ -14,10 +14,11 @@ class LampController:
         return lamp.get_state()
     
     def create_simple_lamp(self,lamp_id):
-        self.all_lamps.append(Lamp(),lamp_id)
+        self.all_lamps.append(Lamp(lamp_id),lamp_id)
+        #Break
     
     def create_color_lamp(self,lamp_id,color):
-        self.all_lamps.append(ColorLamp(),lamp_id)
+        self.all_lamps.append(ColorLamp(lamp_id),lamp_id)
         self.all_lamps.lamp_list[lamp_id].set_color(color)
 
     def create_lamp_array(self,array_id):
@@ -26,3 +27,5 @@ class LampController:
     def add_lamp_to_array(self,array_id,lamp_id):
         self.all_lamp_arrays.lamp_arrays[array_id].append(self.all_lamps.get_lamp(lamp_id))
     
+    def remove_lamp_from_array(self,array_id,lamp_id):
+        self.all_lamp_arrays.lamp_arrays[array_id].remove_lamp(lamp_id)

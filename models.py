@@ -1,7 +1,8 @@
 class Lamp:
 
-    def __init__(self):
+    def __init__(self,lamp_id):
         self.state=False
+        self.id = lamp_id
 
     def set_on(self):
         self.state=True
@@ -9,13 +10,12 @@ class Lamp:
     def set_off(self):
         self.state=False
 
-
     def get_state(self): #Não percebo o porque desta "Função", nao podiamos simplesmente chamar Lamp.state?
         return self.state
 
 class ColorLamp(Lamp):
-    def __init__(self):
-        Lamp.__init__(self)
+    def __init__(self,lamp_id):
+        Lamp.__init__(self,lamp_id)
         self.color = "White" #Default Color
         
     def set_color(self, color):
@@ -28,7 +28,7 @@ class LampArray:
     def __init__(self):
         self.conjunto = []
     
-    def append_lamp(self, lamp):
+    def append(self, lamp):
         self.conjunto.append(lamp)
     
     def turn_on(self):
@@ -44,6 +44,11 @@ class LampArray:
         for lamp in self.conjunto:
             result.append(lamp.get_state())
         return result
+
+    def remove_lamp(self,lamp_id):
+        for lamp in self.conjunto:
+            if lamp.id == lamp_id:
+                self.conjunto.remove(lamp)
 
 class all_lamps:
     def __init__(self):
