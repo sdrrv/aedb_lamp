@@ -13,12 +13,12 @@ class Lamp:
         return self.state
 
 class ColorLamp(Lamp):
-
     def __init__(self):
-        self.color="White" #Default Color
         Lamp.__init__(self)
-    def set_color(self,color):
-        self.color=color
+        self.color = "White" #Default Color
+        
+    def set_color(self, color):
+        self.color = color
 
     def get_color(self):
         return self.color
