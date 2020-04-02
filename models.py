@@ -54,3 +54,13 @@ class all_lamps:
     
     def remove(self,lamp_id):
         self.lamp_list.pop(lamp_id)
+
+class all_lamp_arrays:
+    def __init__(self):
+        self.lamp_arrays={}
+    
+    def append(self,lamp_array,array_id):
+        self.lamp_arrays[array_id]=lamp_array
+    
+    def remove(self,array_id):
+        self.lamp_arrays.pop(array_id)
