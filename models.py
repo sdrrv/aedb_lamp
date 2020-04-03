@@ -72,3 +72,6 @@ class all_lamp_arrays:
     
     def remove(self,array_id):
         self.lamp_arrays.pop(array_id)
+    
+    def get_array(self,array_id):
+        return self.lamp_arrays[array_id]

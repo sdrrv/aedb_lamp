@@ -25,7 +25,15 @@ class LampController:
         return self.all_lamps.get_lamp(lamp_id).get_state()
 
     def set_lamp_on(self,lamp_id):
-        self.all_lamps.get_lamp(lamp_id).set_on()
+        if lamp_id in self.all_lamps.lamp_list:
+            self.all_lamps.get_lamp(lamp_id).set_on()
+
+        elif lamp_id in self.all_lamp_arrays.lamp_arrays:
+            self.all_lamp_arrays.get_array(lamp_id).turn_on()
     
     def set_lamp_off(self,lamp_id):
-        self.all_lamps.get_lamp(lamp_id).set_off()
+        if lamp_id in self.all_lamps.lamp_list:
+            self.all_lamps.get_lamp(lamp_id).set_off()
+
+        elif lamp_id in self.all_lamp_arrays.lamp_arrays:
+            self.all_lamp_arrays.get_array(lamp_id).turn_off()
